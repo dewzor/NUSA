@@ -1,0 +1,25 @@
+﻿.form-layout{
+    background-color: #2D2D2D;
+    color: #fff;
+    padding-bottom: 2%;
+    padding-top: 2%;
+
+}
+
+.form-layout .row{
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+form input[type=text]{
+    width: 150px;
+}
+h1{
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+form button[type=submit]{
+    background-color: #fff;
+    font-weight: bold;
+}

@@ -1,0 +1,61 @@
+﻿#filter-profiles{
+    background-color: #2D2D2D;
+    color: #fff;
+}
+
+.filter-box{
+    text-align: center;
+}
+
+.filter-box li p{
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+.form-group{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-group-age{
+        width: 60px;
+}
+
+.form-group-gender{
+        width: 100px;
+}
+
+.form-group-location{
+        width: 160px;
+}
+
+.age-selector{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+h1{
+    margin-top: 5%;
+    font-size: 30px;
+    padding-bottom: 1.5%;
+}
+
+.sides{
+    height: 600px;
+}
+
+.profile{
+    border: 1px solid black;
+    height: 200px;
+    text-align: center;
+    margin-top: 5%;
+    margin: 20px 10px;
+}
+
+.profile p{
+    margin-top: 15px;
+}
+
+

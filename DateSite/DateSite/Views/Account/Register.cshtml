@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/registerStyle.css");
+}
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+        <h1>Register</h1>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="form-layout col-md-12">
+    @using (Html.BeginForm())
+    {
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                @Html.Label("Username")<br />
+                @Html.TextBox("Username")<br />
+            </div>
+            <div class="col-md-2">
+                @Html.Label("Password")<br />
+                @Html.TextBox("Password")<br />
+            </div>
+            <div class="col-md-2">
+                @Html.Label("Firstname")<br />
+                @Html.TextBox("Firstname")<br />
+            </div>
+            <div class="col-md-2">
+                @Html.Label("Lastname")<br />
+                @Html.TextBox("Lastname")<br />
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                @Html.Label("Email")<br />
+                @Html.TextBox("Email")<br />
+            </div>
+            <div class="col-md-2">
+                @Html.Label("Gender")<br />
+                @Html.TextBox("Gender")<br />
+            </div>
+            <div class="col-md-2">
+                @Html.Label("Age")<br />
+                @Html.TextBox("Age")<br />
+            </div>
+            <div class="col-md-2">
+                @Html.Label("Location")<br />
+                @Html.TextBox("Location")<br />
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    @Html.Label("About")<br />
+                    @Html.TextBox("About")<br />
+                </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-2"></div>
+        </div>
+    }
+
+</div>

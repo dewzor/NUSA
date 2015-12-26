@@ -1,0 +1,128 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-brand{
+    background: url(../Content/Images/logo.png) no-repeat top left;
+    background-size: 200px 46px;
+    font-size: 0px;
+    width: 200px;
+    margin-right: 30px;
+}
+
+  .navbar {
+    border-color: #000;
+    z-index: 999;
+    background-color: #2d2d2d;
+}
+
+.icon-bar {
+   background-color:#FF0000 !important;
+}
+
+  .navbar li a{
+      color: #fff;
+  }
+
+    .navbar li a:hover{
+      background-color: #151515;
+  }
+
+
+
+#hero{
+    background-image:url(Images/hero.jpg);
+    background-size:cover;
+    position:relative;
+    height:100vh;
+    margin: 0 auto;
+    margin-top: -50px;
+    background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
+    background-repeat:no-repeat;
+}
+
+
+#content{
+  padding:100px 50px;
+  text-align:center;
+  width:80%;
+  margin:0px auto;
+}
+
+#footer{
+  padding:30px 0px;
+  text-align:center;
+  background-color: #2d2d2d;
+      width: 100%;
+}
+
+
+#footer ul li{
+    display: inline;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#footer ul{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#footer ul li img{
+    height: 40px;
+}
+
+
+.header{
+  position:absolute;
+  top:50%;
+  text-align:center;
+  width:100%;
+  color:#fff;
+  -ms-transform: translate(0,-50%); /* IE 9 */
+    -webkit-transform: translate(0,-50%); /* Safari */
+    transform: translate(0,-50%);  
+}
+
+.header h1{
+    font-size: 50px;
+   font-weight: bolder;
+}
+
+.header h2{
+    font-size: 30px;
+        color: red;
+}
+
+.header h3{
+    font-size: 20px;
+}
+
+.index-text{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.index-text p, .index-text h4, .index-text h5, .index-text h2{
+    margin-top: 5%;
+}
+
+.index-text h4, .index-text h5{
+    font-size: 24px;
+
+}
