@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -102,6 +103,7 @@ textarea {
 .header h1{
     font-size: 50px;
    font-weight: bolder;
+   margin-top: 20%;
 }
 
 .header h2{
@@ -116,6 +118,7 @@ textarea {
 .index-text{
     margin-top: 5%;
     margin-bottom: 5%;
+    width: 100%;
 }
 
 .index-text p, .index-text h4, .index-text h5, .index-text h2{
@@ -125,4 +128,9 @@ textarea {
 .index-text h4, .index-text h5{
     font-size: 24px;
 
+}
+
+#arrow{
+    width: 6%;
+    margin-top: 13%;
 }

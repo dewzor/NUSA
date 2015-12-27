@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9CE7E88-C8F8-4BEB-BFF9-30DB0F61E882}</ProjectGuid>
+    <ProjectGuid>{29D1CE9D-4E1B-4960-A27A-AA6DA14799CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Repositories</RootNamespace>
@@ -66,45 +66,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Intrests.cs">
+      <DependentUpon>UserDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Profiles.cs">
-      <DependentUpon>UserDBEntities.tt</DependentUpon>
+      <DependentUpon>UserDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDBEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDBEntities.Context.tt</DependentUpon>
+    <Compile Include="SECURITY.cs">
+      <DependentUpon>UserDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserDBEntities.cs">
+    <Compile Include="UserDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserDBEntities.tt</DependentUpon>
+      <DependentUpon>UserDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserDBEntities.Designer.cs">
+    <Compile Include="UserDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserDBEntities.edmx</DependentUpon>
+      <DependentUpon>UserDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="UsersRepository.cs" />
+    <Compile Include="WALLPOST.cs">
+      <DependentUpon>UserDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UserDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserDB.edmx</DependentUpon>
+      <LastGenOutput>UserDB.Context.cs</LastGenOutput>
+    </Content>
     <Content Include="UserDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="UserDBEntities.Context.tt">
+    <Content Include="UserDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDBEntities.edmx</DependentUpon>
-      <LastGenOutput>UserDBEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="UserDBEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDBEntities.edmx</DependentUpon>
-      <LastGenOutput>UserDBEntities.cs</LastGenOutput>
+      <DependentUpon>UserDB.edmx</DependentUpon>
+      <LastGenOutput>UserDB.cs</LastGenOutput>
     </Content>
     <Content Include="UserDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>UserDB.mdf</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="UserDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="UserDB.edmx.diagram">
+      <DependentUpon>UserDB.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -117,22 +142,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="UserDBEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserDBEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
-    <None Include="UserDBEntities.edmx.diagram">
-      <DependentUpon>UserDBEntities.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -25,6 +25,9 @@ namespace Repositories
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Intrests> Intrests { get; set; }
         public virtual DbSet<Profiles> Profiles { get; set; }
+        public virtual DbSet<WALLPOST> WALLPOST { get; set; }
+        public virtual DbSet<SECURITY> SECURITY { get; set; }
     }
 }
