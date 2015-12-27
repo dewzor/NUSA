@@ -1,11 +1,9 @@
-﻿using DateSite.Models;
-using Repositories;
+﻿using Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace DateSite.Controllers
 {
@@ -21,37 +19,22 @@ namespace DateSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
-        {;
-
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            var completed = true;
-
-            if (!completed)
-            {
-                ModelState.AddModelError("", "Fel fan");
-                return View();
-            }
+        public ActionResult Register(string username, string password, string firstname, string lastname, string email, string gender, string age, string location, string about)
+        {
 
             Profiles profile = new Profiles();
-            profile.About = model.About;
-            profile.Age = Int32.Parse(model.Age);
-            profile.Email = model.Email;
-            profile.Gender = model.Gender;
-            profile.Lastname = model.Lastname;
-            profile.Firstname = model.Firstname;
+            profile.Username = username;
+            profile.Pass = password;
+            profile.Firstname = firstname;
+            profile.Lastname = lastname;
+            profile.Gender = gender;
+            profile.Age = Int32.Parse(age);
+            profile.Location = location;
+            profile.About = about;
+            profile.Email = email;
+    
 
-            SECURITY security = new SECURITY();
-            security.USERNAME = model.Username;
-            security.PASSWORD = model.Password;
-            security.VISIBILITY = true;
-            security.PID = 5;
-
-            _usersRepository.insertUser(profile, security);
+            _usersRepository.insertUser(profile);
 
             return RedirectToAction("Index", "Home");
         }

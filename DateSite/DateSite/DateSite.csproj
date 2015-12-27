@@ -185,7 +185,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\browseStyle.css" />
-    <Content Include="Content\Images\arrow.png" />
     <Content Include="Content\Images\carousel1.jpg" />
     <Content Include="Content\Images\carousel3.jpg" />
     <Content Include="Content\Images\facebook.png" />
@@ -199,7 +198,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\AutoScroll.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Text\countries.cntry" />
@@ -252,7 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repositories\Repositories.csproj">
-      <Project>{29d1ce9d-4e1b-4960-a27a-aa6da14799cc}</Project>
+      <Project>{a9ce7e88-c8f8-4beb-bff9-30db0f61e882}</Project>
       <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
