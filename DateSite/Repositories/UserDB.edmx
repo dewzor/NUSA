@@ -207,7 +207,7 @@ warning 6002: The table/view 'C:\USERS\KEVIN\DESKTOP\REPOSITORY\NUSA\DATESITE\RE
     [REQUESTEDFRIEND].[FRID] AS [FRID]
     FROM [dbo].[REQUESTEDFRIEND] AS [REQUESTEDFRIEND]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="SECURITY" EntityType="Self.SECURITY" store:Type="Tables" Schema="dbo">
+          <EntitySet Name="SECURITY" EntityType="Self.SECURITY" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [SECURITY].[PID] AS [PID], 
     [SECURITY].[USERNAME] AS [USERNAME], 

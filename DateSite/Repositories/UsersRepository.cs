@@ -33,7 +33,7 @@ namespace Repositories
                 {
                     context.Database.Connection.Open();
                     context.Profiles.Add(profile);
-                    context.SECURITY.Add(security);
+                    //context.SECURITY.Add(security);
                     context.SaveChanges();
                 }
             }
