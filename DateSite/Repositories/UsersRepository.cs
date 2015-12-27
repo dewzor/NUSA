@@ -9,7 +9,6 @@ namespace Repositories
     public class UsersRepository
     {
 
-
         /// <summary>
         /// Hämtar alla användare
         /// </summary>
@@ -26,7 +25,7 @@ namespace Repositories
         /// <summary>
         /// Lägger till en användare i databasen
         /// </summary>
-        public void insertUser(Profiles profile)
+        public void insertUser(Profiles profile, SECURITY security)
         {
             try
             {
@@ -34,14 +33,16 @@ namespace Repositories
                 {
                     context.Database.Connection.Open();
                     context.Profiles.Add(profile);
+                    context.SECURITY.Add(security);
                     context.SaveChanges();
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                
+
             }
 
         }
+
     }
 }

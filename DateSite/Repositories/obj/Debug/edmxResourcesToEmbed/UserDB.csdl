@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Intrests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Profiles" Relationship="Self.HAVINGINTREST" FromRole="Intrests" ToRole="Profiles" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="About" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SECURITY" Relationship="Self.FK__SECURITY__PID__4222D4EF" FromRole="Profiles" ToRole="SECURITY" />
+    <NavigationProperty Name="WALLPOST" Relationship="Self.FK__WALLPOST__FID__412EB0B6" FromRole="Profiles" ToRole="WALLPOST" />
+    <NavigationProperty Name="WALLPOST1" Relationship="Self.FK__WALLPOST__PID__403A8C7D" FromRole="Profiles" ToRole="WALLPOST" />
+    <NavigationProperty Name="Profiles1" Relationship="Self.FRIENDSWITH" FromRole="Profiles" ToRole="Profiles1" />
+    <NavigationProperty Name="Profiles2" Relationship="Self.FRIENDSWITH" FromRole="Profiles1" ToRole="Profiles" />
+    <NavigationProperty Name="Intrests" Relationship="Self.HAVINGINTREST" FromRole="Profiles" ToRole="Intrests" />
+    <NavigationProperty Name="Profiles11" Relationship="Self.REQUESTEDFRIEND" FromRole="Profiles" ToRole="Profiles1" />
+    <NavigationProperty Name="Profiles3" Relationship="Self.REQUESTEDFRIEND" FromRole="Profiles1" ToRole="Profiles" />
+  </EntityType>
+  <EntityType Name="WALLPOST">
+    <Key>
+      <PropertyRef Name="POSTID" />
+    </Key>
+    <Property Name="POSTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PID" Type="Int32" Nullable="false" />
+    <Property Name="POST" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Profiles" Relationship="Self.FK__WALLPOST__FID__412EB0B6" FromRole="WALLPOST" ToRole="Profiles" />
+    <NavigationProperty Name="Profiles1" Relationship="Self.FK__WALLPOST__PID__403A8C7D" FromRole="WALLPOST" ToRole="Profiles" />
+  </EntityType>
+  <EntityType Name="SECURITY">
+    <Key>
+      <PropertyRef Name="PID" />
+      <PropertyRef Name="USERNAME" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="VISIBILITY" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VISIBILITY" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Profiles" Relationship="Self.FK__SECURITY__PID__4222D4EF" FromRole="SECURITY" ToRole="Profiles" />
+  </EntityType>
+  <Association Name="FK__SECURITY__PID__4222D4EF">
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="1" />
+    <End Role="SECURITY" Type="Self.SECURITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SECURITY">
+        <PropertyRef Name="PID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WALLPOST__FID__412EB0B6">
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="1" />
+    <End Role="WALLPOST" Type="Self.WALLPOST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WALLPOST">
+        <PropertyRef Name="FID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WALLPOST__PID__403A8C7D">
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="1" />
+    <End Role="WALLPOST" Type="Self.WALLPOST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WALLPOST">
+        <PropertyRef Name="PID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRIENDSWITH">
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="*" />
+    <End Role="Profiles1" Type="Self.Profiles" Multiplicity="*" />
+  </Association>
+  <Association Name="HAVINGINTREST">
+    <End Role="Intrests" Type="Self.Intrests" Multiplicity="*" />
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="*" />
+  </Association>
+  <Association Name="REQUESTEDFRIEND">
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="*" />
+    <End Role="Profiles1" Type="Self.Profiles" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Intrests" EntityType="Self.Intrests" />
+    <EntitySet Name="Profiles" EntityType="Self.Profiles" />
+    <EntitySet Name="WALLPOST" EntityType="Self.WALLPOST" />
+    <EntitySet Name="SECURITY" EntityType="Self.SECURITY" />
+    <AssociationSet Name="FK__SECURITY__PID__4222D4EF" Association="Self.FK__SECURITY__PID__4222D4EF">
+      <End Role="Profiles" EntitySet="Profiles" />
+      <End Role="SECURITY" EntitySet="SECURITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WALLPOST__FID__412EB0B6" Association="Self.FK__WALLPOST__FID__412EB0B6">
+      <End Role="Profiles" EntitySet="Profiles" />
+      <End Role="WALLPOST" EntitySet="WALLPOST" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WALLPOST__PID__403A8C7D" Association="Self.FK__WALLPOST__PID__403A8C7D">
+      <End Role="Profiles" EntitySet="Profiles" />
+      <End Role="WALLPOST" EntitySet="WALLPOST" />
+    </AssociationSet>
+    <AssociationSet Name="FRIENDSWITH" Association="Self.FRIENDSWITH">
+      <End Role="Profiles" EntitySet="Profiles" />
+      <End Role="Profiles1" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="HAVINGINTREST" Association="Self.HAVINGINTREST">
+      <End Role="Intrests" EntitySet="Intrests" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="REQUESTEDFRIEND" Association="Self.REQUESTEDFRIEND">
+      <End Role="Profiles" EntitySet="Profiles" />
+      <End Role="Profiles1" EntitySet="Profiles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
