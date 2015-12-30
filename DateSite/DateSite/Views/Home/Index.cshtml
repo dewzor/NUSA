@@ -5,6 +5,7 @@
 
 <head>
     <script type="text/javascript" src="@Url.Content("/Scripts/AutoScroll.js")"></script>
+    <script src="~/scripts/jquery-1.10.2.js"></script>
 </head>
 
 <div id="wrapper">
@@ -13,11 +14,14 @@
             <h1>Wink</h1>
             <h2>Easy Dating Service</h2>
             <h3>- Meet your partner today -</h3>
-            <a href="" onclick="return false" onmousedown="AutoScrollTo()"><img src="~/Content/Images/arrow.png" id="arrow" /></a>
+            <a href="" onclick="return false" onmousedown="AutoScrollTo()" id="downBtn"><img src="~/Content/Images/arrow.png" id="arrow" /></a>
         </div>
     </div>
 
-    <div class="row index-text">
+
+
+
+    <div class="row index-text"  id="scrollbox">
         <div class="col-md-1"></div>
             <div class="col-md-10">
                 <h2>Easy</h2>
@@ -35,14 +39,11 @@
         </div>
         
 
-        <div class="col-md-5" id="scrollbox">
+        <div class="col-md-5">
             <h5>Matching</h5>
             <p>Proin rhoncus sed ante id vulputate. Integer pretium id magna fringilla sollicitudin. Donec congue turpis ligula. Aenean ornare leo dolor, ac dapibus risus faucibus pretium. Maecenas dignissim consectetur pellentesque. Sed tempor facilisis lacus, ac commodo nunc maximus at. Vestibulum eget eros sed nulla luctus semper at vitae eros. Phasellus elementum maximus fermentum. In aliquet mattis imperdiet. Integer vulputate malesuada lorem et dapibus. Donec ac est ac lorem sagittis iaculis nec ac ex. Quisque non bibendum nulla, eu sodales mi.</p>
         </div>
         <div class="col-md-1"></div>
     </div>
 
-    <div id="footer">
-        <p> En korvf i footern , mmm va gott</p>
-    </div>
 </div>

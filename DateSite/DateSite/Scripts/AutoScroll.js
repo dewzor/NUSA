@@ -1,4 +1,14 @@
-﻿function AutoScrollTo() {
-    var div = document.getElementById('scrollbox');
-    div.scrollTop = '1500';
-}
+﻿$(document).ready(function () {
+    
+    $('#downBtn').click(function () {
+
+        $('html, body').animate({
+            scrollTop: $("#scrollbox").offset().top
+        }, 1000);
+
+    })
+
+
+
+
+});

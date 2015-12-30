@@ -208,12 +208,14 @@ warning 6002: The table/view 'C:\USERS\KEVIN\DESKTOP\REPOSITORY\NUSA\DATESITE\RE
     FROM [dbo].[REQUESTEDFRIEND] AS [REQUESTEDFRIEND]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SECURITY" EntityType="Self.SECURITY" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SECURITY].[PID] AS [PID], 
-    [SECURITY].[USERNAME] AS [USERNAME], 
-    [SECURITY].[PASSWORD] AS [PASSWORD], 
-    [SECURITY].[VISIBILITY] AS [VISIBILITY]
-    FROM [dbo].[SECURITY] AS [SECURITY]</DefiningQuery>
+            <DefiningQuery>
+              SELECT
+              [SECURITY].[PID] AS [PID],
+              [SECURITY].[USERNAME] AS [USERNAME],
+              [SECURITY].[PASSWORD] AS [PASSWORD],
+              [SECURITY].[VISIBILITY] AS [VISIBILITY]
+              FROM [dbo].[SECURITY] AS [SECURITY]
+            </DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__FRIENDSWITH__FID__3C69FB99" Association="Self.FK__FRIENDSWITH__FID__3C69FB99">
             <End Role="Profiles" EntitySet="Profiles" />

@@ -10,6 +10,18 @@ namespace Repositories
     {
 
         /// <summary>
+        ///  Hämtar en user med viss id
+        /// </summary>
+        public Profiles findProfileByName(string name)
+        {
+            using (var context = new UserDBEntities())
+            {
+                Profiles profile = context.Profiles.Find(name);
+                return profile;
+            }
+        }
+
+        /// <summary>
         /// Hämtar alla användare
         /// </summary>
         public List<Profiles> fetchProfiles()
@@ -33,15 +45,30 @@ namespace Repositories
                 {
                     context.Database.Connection.Open();
                     context.Profiles.Add(profile);
-                    //context.SECURITY.Add(security);
                     context.SaveChanges();
+
+                    security.PID = Int32.Parse(context.Profiles.Last().ToString());
+                    context.SECURITY.Add(security);
+                    
                 }
             }
-            catch (Exception e)
+            catch 
             {
 
             }
 
+        }
+
+
+        public SECURITY loginUser(SECURITY user)
+        {
+            using (var context = new UserDBEntities())
+            {
+                context.Database.Connection.Open();
+                var usr = context.SECURITY.Single(u => u.USERNAME == user.USERNAME && u.PASSWORD == user.PASSWORD);
+                return usr;
+            }
+            
         }
 
     }

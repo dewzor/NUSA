@@ -22,7 +22,7 @@ namespace DateSite.Controllers
 
         [HttpPost]
         public ActionResult Register(RegisterModel model)
-        {;
+        {
 
             if (!ModelState.IsValid)
             {
@@ -49,11 +49,45 @@ namespace DateSite.Controllers
             security.USERNAME = model.Username;
             security.PASSWORD = model.Password;
             security.VISIBILITY = true;
-            security.PID = 5;
 
             _usersRepository.insertUser(profile, security);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginModel user)
+        {
+
+            SECURITY _user = new SECURITY();
+            _user.USERNAME = user.Username;
+            _user.PASSWORD = user.Password;
+            var usr = _usersRepository.loginUser(_user);
+
+            if (usr != null)
+            {
+            Session["UserID"] = usr.PID.ToString();
+            Session["Username"] = usr.USERNAME.ToString();
+                return RedirectToAction("LoggedIn");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Username or password is invalid.");
+            }
+
+            return View();
+        }
+
+        public ActionResult LoggedIn()
+        {
+            if(Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
     }
 }

@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DateSite.Models
 {
 
     public class RegisterModel
     {
-
-
         [Display(Name = "Firstname")]
         [Required(ErrorMessage = "You need to enter a first name")]
         public string Firstname { get; set; }
@@ -44,7 +43,24 @@ namespace DateSite.Models
         [Display(Name = "About")]
         public string About { get; set; }
 
+    }
 
+    public class SecurityModel
+    {
+        public int PID { get; set; }
+
+        public string USERNAME { get; set; }
+        public string PASSWORD { get; set; }
+        public bool VISIBILITY { get; set; }
+
+        [ForeignKey("Id")]
+        public virtual ICollection<RegisterModel> register { get; set; }
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 
 
