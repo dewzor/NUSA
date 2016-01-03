@@ -1,9 +1,17 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Architects Daughter', cursive;
+}
+h1, h2, h3, h4,h5,h6{
+       font-family: 'Architects Daughter', cursive;
+       font-weight: bolder;
 }
 
+p{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 100;
+}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -79,6 +87,10 @@
     margin-left: 5px;
 }
 
+#footer .row{
+    width: 99.9%;
+}
+
 
 
 .header{
@@ -100,7 +112,7 @@
 
 .header h2{
     font-size: 30px;
-        color: red;
+        color: #fc2d2d;
 }
 
 .header h3{
@@ -111,14 +123,16 @@
     margin-top: 5%;
     margin-bottom: 5%;
     width: 100%;
+    font-size: 17px;
 }
 
 .index-text p, .index-text h4, .index-text h5, .index-text h2{
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
-.index-text h4, .index-text h5{
+.index-text h4, .index-text h5, .index-text h2{
     font-size: 24px;
+    color: #fc2d2d;
 
 }
 
@@ -134,7 +148,7 @@
 .bold-li{
     font-size: 20px;
     margin-bottom: 5px;
-    color: #F00000;
+    color: #fc2d2d;
 
 
 }
@@ -154,3 +168,56 @@
     min-height: 580px;
 }
 
+#scrollbox{
+    margin-bottom: 0px;
+}
+
+
+.picture_collection img{
+    width: 80px;
+    height: 100px;
+    border: 2px solid #2D2D2D;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.picture_collection{
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    background-color: #2D2D2D;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-style: italic;
+}
+
+.picture_collection p{
+    margin-top: 15px;
+}
+
+#registerBtn{
+    background-color: #fc2d2d;
+    border: 0;
+    box-shadow: 2px 5px 20px black;
+    height: 100px;
+    width: 200px;
+    font-weight: bolder;
+    font-size: 40px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+#registerBtn:hover{
+    background-color: red;
+    transform: scale(1.05);
+    transition: all .1s ease-in-out;
+}
+
+.regArea{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    width: 99.9%;
+}

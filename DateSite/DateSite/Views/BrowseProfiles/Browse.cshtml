@@ -7,11 +7,6 @@
 
 }
 
-@*
-    @{
-        var profiles = (List<String>) ViewData["Profiles"];
-    }*@
-
 <div class="container">
     <h1>Browse Profiles</h1>
     
@@ -61,6 +56,7 @@
                     <li>
                         <div class="form-group form-group-gender">
                             <select class="form-control" id="to">
+                                <option>-</option>
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
@@ -78,6 +74,10 @@
                             <select class="form-control" id="to">
                                 @foreach (var i in Model.countries)
                                 {
+                                    if(i.ToString() == "Afghanistan")
+                                    {
+                                        <option>-</option>
+                                    }
                                     <option>@i.ToString()</option>
                                 }
                             </select>
@@ -98,7 +98,7 @@
         <div class="row">
             @foreach (var i in Model.profiles)
             {
-                <div class="col-md-2 profile">
+                <div class="col-md-2 profile" style="background-image:url();">
                     <p>@i.Firstname</p>
                     <p>@i.Lastname</p>
                     <p>@i.Gender</p>
@@ -111,5 +111,3 @@
     </div>
     <div class="col-md-2 sides"></div>
 </div>
-
-

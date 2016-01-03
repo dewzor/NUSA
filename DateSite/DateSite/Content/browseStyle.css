@@ -20,7 +20,7 @@
 }
 
 .form-group-age{
-        width: 60px;
+        width: 70px;
 }
 
 .form-group-gender{
@@ -43,14 +43,14 @@ h1{
 }
 
 .sides{
-    height: 600px;
+
 }
 
 .profile{
     border: 1px solid black;
     height: 200px;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 100px;
     margin: 20px 10px;
 }
 

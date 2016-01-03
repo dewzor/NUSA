@@ -65,7 +65,16 @@ namespace Repositories
             using (var context = new UserDBEntities())
             {
                 context.Database.Connection.Open();
-                var usr = context.SECURITY.Single(u => u.USERNAME == user.USERNAME && u.PASSWORD == user.PASSWORD);
+                SECURITY usr = null;
+                try
+                {
+                     usr = context.SECURITY.Single(u => u.USERNAME == user.USERNAME && u.PASSWORD == user.PASSWORD);
+                }
+                catch
+                {
+                    usr = null;
+                }
+
                 return usr;
             }
             

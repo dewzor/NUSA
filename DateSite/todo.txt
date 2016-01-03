@@ -1,0 +1,11 @@
+Databasen ska skapas KLAR
+Login (KLAR)
+Logout
+Registera (NÄSTAN KLAR, SECURITYTABELLEN SKA DOCK UPPDATERAS MED)
+Redigera profil
+Browsefunktion (KLAR MEN BEHÖVS FILTRERING)
+Vänner (visa vänförfrågningar) (kontaklista)
+Validering
+Två språk
+Göra inlägg på andras väggar
+Dölja profil

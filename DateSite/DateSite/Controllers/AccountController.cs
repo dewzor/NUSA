@@ -86,8 +86,14 @@ namespace DateSite.Controllers
             }
             else
             {
+                ViewData["LoginError"] = "Could not login. Incorrect credentials.";
                 return RedirectToAction("Login");
             }
+        }
+
+        public ActionResult Login()
+        {
+            return View();
         }
     }
 }
