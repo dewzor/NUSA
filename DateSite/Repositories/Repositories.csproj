@@ -69,6 +69,7 @@
     <Compile Include="Intrests.cs">
       <DependentUpon>UserDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ManageRepository.cs" />
     <Compile Include="Profiles.cs">
       <DependentUpon>UserDB.tt</DependentUpon>
     </Compile>

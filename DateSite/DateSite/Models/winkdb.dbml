@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UserDB" Class="winkdbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Programmering\NUSA\DateSite\Repositories\UserDB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UserDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Profiles" Member="Profiles">
+    <Type Name="Profile">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NChar(6)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="About" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="Profile_WALLPOST" Member="WALLPOSTs" ThisKey="Id" OtherKey="FID" Type="WALLPOST" />
+      <Association Name="Profile_WALLPOST1" Member="WALLPOSTs1" ThisKey="Id" OtherKey="PID" Type="WALLPOST" />
+      <Association Name="Profile_SECURITY" Member="SECURITies" ThisKey="Id" OtherKey="PID" Type="SECURITY" />
+      <Association Name="Profile_REQUESTEDFRIEND" Member="REQUESTEDFRIENDs" ThisKey="Id" OtherKey="FRID" Type="REQUESTEDFRIEND" />
+      <Association Name="Profile_REQUESTEDFRIEND1" Member="REQUESTEDFRIENDs1" ThisKey="Id" OtherKey="UID" Type="REQUESTEDFRIEND" />
+      <Association Name="Profile_HAVINGINTREST" Member="HAVINGINTRESTs" ThisKey="Id" OtherKey="PID" Type="HAVINGINTREST" />
+      <Association Name="Profile_FRIENDSWITH" Member="FRIENDSWITHs" ThisKey="Id" OtherKey="FID" Type="FRIENDSWITH" />
+      <Association Name="Profile_FRIENDSWITH1" Member="FRIENDSWITHs1" ThisKey="Id" OtherKey="UID" Type="FRIENDSWITH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WALLPOST" Member="WALLPOSTs">
+    <Type Name="WALLPOST">
+      <Column Name="POSTID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="POST" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Profile_WALLPOST" Member="Profile" ThisKey="FID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+      <Association Name="Profile_WALLPOST1" Member="Profile1" ThisKey="PID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SECURITY" Member="SECURITies">
+    <Type Name="SECURITY">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="VISIBILITY" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Profile_SECURITY" Member="Profile" ThisKey="PID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.REQUESTEDFRIEND" Member="REQUESTEDFRIENDs">
+    <Type Name="REQUESTEDFRIEND">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FRID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Profile_REQUESTEDFRIEND" Member="Profile" ThisKey="FRID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+      <Association Name="Profile_REQUESTEDFRIEND1" Member="Profile1" ThisKey="UID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Intrests" Member="Intrests">
+    <Type Name="Intrest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Intrest_HAVINGINTREST" Member="HAVINGINTRESTs" ThisKey="ID" OtherKey="IID" Type="HAVINGINTREST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HAVINGINTREST" Member="HAVINGINTRESTs">
+    <Type Name="HAVINGINTREST">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Intrest_HAVINGINTREST" Member="Intrest" ThisKey="IID" OtherKey="ID" Type="Intrest" IsForeignKey="true" />
+      <Association Name="Profile_HAVINGINTREST" Member="Profile" ThisKey="PID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FRIENDSWITH" Member="FRIENDSWITHs">
+    <Type Name="FRIENDSWITH">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Profile_FRIENDSWITH" Member="Profile" ThisKey="FID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+      <Association Name="Profile_FRIENDSWITH1" Member="Profile1" ThisKey="UID" OtherKey="Id" Type="Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

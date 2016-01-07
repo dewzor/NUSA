@@ -45,7 +45,7 @@ namespace DateSite.Controllers
             profile.Lastname = model.Lastname;
             profile.Firstname = model.Firstname;
 
-            SECURITY security = new SECURITY();
+            Repositories.SECURITY security = new Repositories.SECURITY();
             security.USERNAME = model.Username;
             security.PASSWORD = model.Password;
             security.VISIBILITY = true;
@@ -59,7 +59,7 @@ namespace DateSite.Controllers
         public ActionResult Login(LoginModel user)
         {
 
-            SECURITY _user = new SECURITY();
+            Repositories.SECURITY _user = new Repositories.SECURITY();
             _user.USERNAME = user.Username;
             _user.PASSWORD = user.Password;
             var usr = _usersRepository.loginUser(_user);

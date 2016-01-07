@@ -30,7 +30,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Browse Profiles", "Browse", "BrowseProfiles")</li>
-                    <li>@Html.ActionLink("Profile", "Profile", "Home")</li>
+                    <li>@Html.ActionLink("Profile", "Profile", "Manage")</li>
                 </ul>View
 
                 @if(Session["UserID"] == null){
@@ -38,7 +38,7 @@
                 }
                 else
                 {
-                    @Html.Partial("_LoggedInPartial");
+                    @Html.Partial("_LoginPartial");
                 }
 
 

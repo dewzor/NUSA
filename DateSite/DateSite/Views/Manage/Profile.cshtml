@@ -1,0 +1,31 @@
+﻿
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/Profile.css");
+}
+<div class="container">
+    <h2>Profile</h2>
+    </br>
+    </br>
+    <div class="col-md-3">
+        <img src="~/Content/Images/facebook.png" width="200" height="300" />
+        <input type="file" id="my_file" style="display: none;" />
+        <input type="submit" value="Upload new profile picture" class="uploadpic" />
+    </div>
+    <div class="col-md-8">
+        <form id="usrform">
+            Email: <input type="text" name="usrname" value="Currentemail" /></br>
+            Hide your profile from search?
+            <INPUT TYPE="radio" NAME="hide" VALUE="y">Yes
+            <INPUT TYPE="radio" NAME="hide" VALUE="n" checked="checked">No
+            <textarea class="aboutbox" name="about" form="usrform">Text från SQL SUURRRWER</textarea>
+            </br>
+            <input type="submit">
+        </form>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="@Url.Content("/Scripts/mprofile.js")"></script>

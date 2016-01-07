@@ -22,3 +22,15 @@ C:\Users\kevin\Desktop\NUSa\NUSA\DateSite\Repositories\bin\Debug\EntityFramework
 C:\Users\kevin\Desktop\NUSa\NUSA\DateSite\Repositories\obj\Debug\Repositories.csprojResolveAssemblyReference.cache
 C:\Users\kevin\Desktop\NUSa\NUSA\DateSite\Repositories\obj\Debug\Repositories.dll
 C:\Users\kevin\Desktop\NUSa\NUSA\DateSite\Repositories\obj\Debug\Repositories.pdb
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\UserDB.mdf
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\UserDB_log.ldf
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\Repositories.dll.config
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\Repositories.dll
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\Repositories.pdb
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\EntityFramework.dll
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\EntityFramework.SqlServer.dll
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\EntityFramework.xml
+F:\Programmering\NUSA\DateSite\Repositories\bin\Debug\EntityFramework.SqlServer.xml
+F:\Programmering\NUSA\DateSite\Repositories\obj\Debug\Repositories.csprojResolveAssemblyReference.cache
+F:\Programmering\NUSA\DateSite\Repositories\obj\Debug\Repositories.dll
+F:\Programmering\NUSA\DateSite\Repositories\obj\Debug\Repositories.pdb
